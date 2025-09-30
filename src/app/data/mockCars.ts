@@ -1,0 +1,63 @@
+export const mockCars = [
+  {
+    id: "1",
+    title: "Toyota Corolla 1.8 XEi CVT",
+    price: "4.200.000",
+    originalPrice: "4.500.000",
+    year: 2022,
+    km: "25.000",
+    location: "Capital Federal",
+    seller: "Concesionario Toyota",
+    description:
+      "Excelente estado, service oficial al día. Único dueño. Llantas aleación, climatizador automático, sensor de estacionamiento.",
+    images: [
+      "https://images.unsplash.com/photo-1552650599-89e0f92c6dcf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1609465397944-be1ce3ebda61?auto=format&fit=crop&w=800&q=80",
+    ],
+    specs: { transmission: "CVT", fuel: "Nafta", doors: "4 puertas", color: "Blanco Perla" },
+    costs: { transfer: 45000, annualPatent: 68000, insurance: 125000 },
+    rating: 4.3,
+    reviews: 127,
+    priceHistory: [4500000, 4400000, 4300000, 4200000],
+  },
+  {
+    id: "2",
+    title: "Honda CR-V 1.5 Turbo AWD",
+    price: "7.800.000",
+    year: 2023,
+    km: "15.000",
+    location: "Zona Norte",
+    seller: "Honda Premium Dealer",
+    description:
+      "SUV familiar de lujo con tracción AWD, motor turbo eficiente, tecnología avanzada y máxima seguridad.",
+    images: [
+      "https://images.unsplash.com/photo-1615836494670-706aa6af4974?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1583267745914-7e8d40132799?auto=format&fit=crop&w=800&q=80",
+    ],
+    specs: { transmission: "Automática", fuel: "Nafta", doors: "5 puertas", color: "Gris Oscuro" },
+    costs: { transfer: 65000, annualPatent: 120000, insurance: 185000 },
+    rating: 4.6,
+    reviews: 210,
+    priceHistory: [8200000, 8100000, 8000000, 7800000],
+  },
+  {
+    id: "3",
+    title: "Volkswagen Golf 1.4 TSI Highline",
+    price: "3.900.000",
+    year: 2021,
+    km: "42.000",
+    location: "Zona Oeste",
+    seller: "VW Official Dealer",
+    description:
+      "Hatchback deportivo, motor turbo 1.4 TSI, excelente manejo y gran eficiencia. Ideal para ciudad y ruta.",
+    images: [
+      "https://images.unsplash.com/photo-1748214547184-d994bfe53322?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1549921296-3a8278d5f3f3?auto=format&fit=crop&w=800&q=80",
+    ],
+    specs: { transmission: "Manual", fuel: "Nafta", doors: "5 puertas", color: "Rojo Metalizado" },
+    costs: { transfer: 35000, annualPatent: 55000, insurance: 110000 },
+    rating: 4.1,
+    reviews: 98,
+    priceHistory: [4200000, 4100000, 4000000, 3900000],
+  },
+];
