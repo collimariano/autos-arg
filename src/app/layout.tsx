@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import "./styles/globals.css";
-import { Providers } from "./providers";
-import { ClientLayout } from "./ClientLayout";
+import '@mantine/core/styles.css';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { CarProvider } from '@/context/CarContext';
+import Header from '@/components/layout/Header';
 
-export const metadata: Metadata = {
-  title: "Autos Market",
-  description: "Find and sell cars in Argentina",
+export const metadata = {
+  title: 'Autos Argentina - Compra y Vende Autos',
+  description: 'Plataforma de compra y venta de autos usados en Argentina',
 };
 
 export default function RootLayout({
@@ -14,11 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body>
-        <Providers>
-          <ClientLayout>{children}</ClientLayout>
-        </Providers>
+        <MantineProvider>
+          <CarProvider>
+            <Header />
+            <main>{children}</main>
+          </CarProvider>
+        </MantineProvider>
       </body>
     </html>
   );

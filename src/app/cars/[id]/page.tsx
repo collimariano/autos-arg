@@ -1,15 +1,23 @@
-"use client";
+// import CarDetail from '@/components/detail/CarDetail';
 
-import { useParams } from "next/navigation";
-import { CarDetail } from "@/app/components/CarDetail";
+// export default async function CarDetailPage({
+//   params,
+// }: {
+//   params: Promise<{ id: string }>;
+// }) {
+//   const { id } = await params;
+//   return <CarDetail carId={id} />;
+// }
 
-export default function CarDetailPage() {
-  const params = useParams();
-  const id = params?.id as string;
+import CarDetail from '@/components/detail/CarDetail';
 
-  if (!id) {
-    return <p>Auto no encontrado</p>;
-  }
+export default async function CarDetailPage({ params }: { params: { id: string } }) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/cars/${params.id}`, {
+    cache: 'no-store', // para evitar que quede cacheado
+  });
 
-  return <CarDetail carId={id} />;
+
+  const car = await res.json();
+
+  return <CarDetail car={car} />;
 }

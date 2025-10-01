@@ -1,0 +1,30 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Car {
+  id           String   @id @default(uuid())
+  brand        String
+  model        String
+  year         Int
+  price        Int
+  mileage      Int
+  transmission String
+  fuelType     String
+  location     String
+  province     String
+  description  String
+  images       String[]   // URLs de imágenes
+  features     String[]   // Características
+  color        String
+  doors        Int
+  createdAt    DateTime @default(now())
+  isFeatured   Boolean  @default(false)
+}

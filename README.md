@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 Autos Market (MVP)
 
-## Getting Started
+Marketplace de autos usados y 0 km en Argentina.  
+Construido con **Next.js 15**, **React 19**, **Mantine UI**, **Prisma** y **PostgreSQL**.
 
-First, run the development server:
+---
+
+## 📦 Tech stack
+- [Next.js](https://nextjs.org/) 15 (App Router, React 19)
+- [Mantine](https://mantine.dev/) para UI
+- [Prisma](https://www.prisma.io/) como ORM
+- [PostgreSQL](https://www.postgresql.org/) como base de datos
+- [DBeaver](https://dbeaver.io/) para inspección de la DB (opcional)
+- [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## ⚙️ Requisitos previos
+- Node.js >= 18
+- PostgreSQL >= 14
+- pnpm / npm / yarn (recomendado: `pnpm`)
+
+---
+
+## 🚀 Instalación
+
+Clonar el repo:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/collimariano/autos-arg.git
+cd autos-arg
+🗄️ Configuración de la DB
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Crear usuario y DB en Postgres (si no existen):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+CREATE ROLE marianocolli LOGIN PASSWORD 'tu_password';
+CREATE DATABASE autos_arg OWNER marianocolli;
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+Configurar .env en la raíz:
 
-To learn more about Next.js, take a look at the following resources:
+DATABASE_URL="postgresql://marianocolli:tu_password@localhost:5432/autos_arg"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Migraciones:
 
-## Deploy on Vercel
+npx prisma migrate dev --name init
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+(Opcional) Ver los datos con Prisma Studio:
+
+npx prisma studio
